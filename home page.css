@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(94, 94, 94);
+}
+h1, p, span, h3, a{
+    color: white;
+} 
+h1, h3{
+    text-align: center;
+}
+.nav-item{
+    border: none;
+    background-color: transparent;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+}
+.nav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 30px;
+}
+.div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.asd{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#div2, #div3, #div4, #div5, #div6, #div7{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.divv{
+    background-color: rgba(0, 0, 0, 0.578);
+    width: 30%;
+    height: 380px;
+    border-radius: 20px;
+    border: 1px solid gainsboro;
+    margin-top: 10px;
+    padding: 10px;
+}
+.add{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(142, 142, 142);
+    padding: 5px;
+    color: white;
+}
+.check{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: purple;
+    color: white;
+    margin-right: 10px;
+    width: 150px;
+    height: 40px;
+}

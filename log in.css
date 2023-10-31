@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(30, 28, 35);
+    font-family: sans-serif;
+}
+section{
+    background-color: rgb(75, 72, 255);
+    width: 40%;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgb(81, 81, 81);
+    border-radius: 20px;
+    padding: 10px 5px;
+}
+h1{
+    text-align: center;
+}
+input{
+    display: block;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1.5px solid gainsboro;
+    padding-left: 10px;
+    transition: all 0.2s linear;
+    outline: none;
+}
+input:focus-within{
+    box-shadow: 0px 0px 20px rgb(180, 236, 255);
+}
+button{
+    background-color: rgb(11, 11, 78);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600
+ }
+ div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+ p{
+    text-align: center;
+    color: white;
+ }
+ a{
+    color: lightblue;
+ }
