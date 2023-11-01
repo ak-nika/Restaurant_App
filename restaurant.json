@@ -336,15 +336,6 @@
     }
   ],
   "cart": [
-    {
-      "name": "Bottled Fanta",
-      "price": 220,
-      "id": 2
-    },
-    {
-      "name": "Canned Sprite",
-      "price": 220,
-      "id": 3
-    }
+    
   ]
 }
