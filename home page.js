@@ -296,6 +296,7 @@ function orderItem(id){
         }).then(res=>res.json())
         .then((data)=>{
             console.log(data);
+            alert("Order Placed");
         }).catch((err)=>{
             console.log(err);
         })
