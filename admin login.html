@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body{
+    background-color: rgb(30, 28, 35);
+    font-family: sans-serif;
+}
+section{
+    background-color: rgb(75, 72, 255);
+    width: 40%;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgb(81, 81, 81);
+    border-radius: 20px;
+    padding: 10px 5px;
+}
+h1{
+    text-align: center;
+}
+input{
+    display: block;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1.5px solid gainsboro;
+    padding-left: 10px;
+    transition: all 0.2s linear;
+    outline: none;
+}
+input:focus-within{
+    box-shadow: 0px 0px 20px rgb(180, 236, 255);
+}
+button{
+    background-color: rgb(11, 11, 78);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600
+ }
+ div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+ p{
+    text-align: center;
+    color: white;
+ }
+ a{
+    color: lightblue;
+ }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Log in</h1>
+        <input required id="username" type="text" placeholder="Enter Username">
+        <input required id="passwords" type="text" placeholder="Enter Password">
+        <div id="div1">
+            <button id="logIn" onclick="logIn()">Log in</button>
+        </div>
+    </section>
+</body>
+<script>
+    const one = document.getElementById("username");
+    const two = document.getElementById("passwords");
+
+    function logIn(){
+        const username = one.value;
+        const pass = two.value;
+
+        if(username == "Admin" && pass == "Admin123"){
+            alert("Welcome Admin");
+            localStorage.setItem("Admin", "Admin");
+            window.location.href = "admin page.html";
+        } else{
+            alert("Incorrect username or email. Please try again");
+        }
+    }
+</script>
+</html>

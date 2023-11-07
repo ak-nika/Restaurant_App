@@ -14,10 +14,16 @@ const btn = document.getElementById("btn");
 const div1 = document.getElementById("div1");
 const input1 = document.getElementById("input1");
 const save = document.getElementById("save");
+const admin = localStorage.getItem("Admin");
 let userId;
 let imgURL;
 let editedURL;
 var event;
+
+if(admin == null){
+    alert("You have not logged in");
+    window.location.href = "admin login.html";
+}
 
 function pickFile(ev){
     console.log(ev.target.files);
@@ -141,11 +147,6 @@ function editDetails(id){
 }
 
 function saveChanges(){
-    // save.innerHTML = `
-    // <div class="spinner-border" role="status">
-    //     <span class="visually-hidden">Loading...</span>
-    // </div>
-    // `;
     let edited = {
         name: nameEdit.value,
         price: priceEdit.value,
