@@ -7,18 +7,9 @@ const categoryEdit = document.getElementById("categoryEdit");
 const stock = document.getElementById("stock");
 const stockEdit = document.getElementById("stockEdit");
 const description = document.getElementById("description");
-const descriptionEdit = document.getElementById("descriptionEdit");
-const foodImg = document.getElementById("foodImg");
-let foodImgEdit = document.getElementById("foodImgEdit");
-const btn = document.getElementById("btn");
-const div1 = document.getElementById("div1");
-const input1 = document.getElementById("input1");
-const save = document.getElementById("save");
 const admin = localStorage.getItem("Admin");
 let userId;
 let imgURL;
-let editedURL;
-var event;
 
 if(admin == null){
     alert("You have not logged in");
@@ -104,7 +95,7 @@ function disFood(){
                       </select>
                       <input id="stockEdit" type="number" placeholder="New number of stock available">
                       <textarea id="descriptionEdit" name="" id="" cols="30" rows="10" placeholder="New description"></textarea>
-                      <input id="input1" type="file" onchange='editImage(event)'>
+                      <input id="input1" type="file" onChange='editImage(event)'>
                       <img id="foodImgEdit" src="" width="200" height="200">
                       </div>
                       <div class="modal-footer">
@@ -126,6 +117,14 @@ function disFood(){
 
 disFood();
 
+const descriptionEdit = document.getElementById("descriptionEdit");
+const foodImg = document.getElementById("foodImg");
+const btn = document.getElementById("btn");
+const div1 = document.getElementById("div1");
+const input1 = document.getElementById("input1");
+const save = document.getElementById("save");
+let editedURL;
+
 function editImage(ev){
     console.log(ev.target.files);
     let file = ev.target.files[0]; 
@@ -133,8 +132,8 @@ function editImage(ev){
     reader.addEventListener("load", (e)=>{
         let editResult = e.target.result;
         editedURL = editResult;
-        foodImgEdit.src = editResult;
-        console.log(result); 
+        const foodImgEdit = document.getElementById("foodImgEdit");
+        foodImgEdit.setAttribute("src", editedURL);
     })
     if(file){
         reader.readAsDataURL(file);

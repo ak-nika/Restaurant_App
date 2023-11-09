@@ -17,7 +17,7 @@ let currUser = JSON.parse(localStorage.getItem("currUser"));
 
 if(currUser == null){
     alert("You're not logged in");
-    window.location.href = "log in";
+    window.location.href = "user log in.html";
 }
 
 span.innerText = `${currUser.fname}`;

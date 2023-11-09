@@ -69,12 +69,37 @@
                     <span>Order quick. Only ${data.stock} left.</span>
                 </div>    
             </main>
-            <div class="divv"><button class="add">Order</button></div>
+            <div class="divv"><button class="add" onclick="orderItem(${data.id})">Order</button></div>
             `;
         }).catch((err)=>{
             console.log(err);
         })
     }
     showItem();
+
+    function orderItem(id){
+    fetch(`http://localhost:1234/food/${id}`).then(res=>res.json())
+    .then((data)=>{
+        let cartObj = {
+            name: data.name,
+            price: Number(data.price)
+        }
+        fetch(`http://localhost:1234/cart`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cartObj)
+        }).then(res=>res.json())
+        .then((data)=>{
+            console.log(data);
+            alert("Order Placed");
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }).catch((err)=>{
+        console.log(err);
+    })
+}
 </script>
 </html>
