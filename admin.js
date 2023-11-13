@@ -1,15 +1,14 @@
 const names = document.getElementById("name");
-const nameEdit = document.getElementById("nameEdit");
 const price = document.getElementById("price");
-const priceEdit = document.getElementById("priceEdit");
 const category = document.getElementById("category");
-const categoryEdit = document.getElementById("categoryEdit");
 const stock = document.getElementById("stock");
-const stockEdit = document.getElementById("stockEdit");
 const description = document.getElementById("description");
+const foodImg = document.getElementById("foodImg");
+const div1 = document.getElementById("div1");
 const admin = localStorage.getItem("Admin");
 let userId;
 let imgURL;
+let editedURL;
 
 if(admin == null){
     alert("You have not logged in");
@@ -24,7 +23,6 @@ function pickFile(ev){
         let result = e.target.result;
         imgURL = result;
         foodImg.src = result;
-        console.log(result); 
     })
     if(file){
         reader.readAsDataURL(file);
@@ -49,11 +47,9 @@ function post(){
         body: JSON.stringify(posts)
     }).then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         alert("Food added");
         window.location.href = "admin page.html";
     }).catch((err)=>{
-        console.log(err);
         alert("Something went wrong. Please try again.")
     })
 }
@@ -61,7 +57,6 @@ function post(){
 function disFood(){
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         for (let index = 0; index < data.length; index++) {
             const el = data[index];
             div1.innerHTML += `
@@ -111,22 +106,12 @@ function disFood(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
 disFood();
 
-const descriptionEdit = document.getElementById("descriptionEdit");
-const foodImg = document.getElementById("foodImg");
-const btn = document.getElementById("btn");
-const div1 = document.getElementById("div1");
-const input1 = document.getElementById("input1");
-const save = document.getElementById("save");
-let editedURL;
-
 function editImage(ev){
-    console.log(ev.target.files);
     let file = ev.target.files[0]; 
     let reader = new FileReader();
     reader.addEventListener("load", (e)=>{
@@ -141,12 +126,16 @@ function editImage(ev){
 }
 
 function editDetails(id){
-    console.log(id);
     userId = id;
 }
 
 function saveChanges(){
-    let edited = {
+const nameEdit = document.getElementById("nameEdit");
+const priceEdit = document.getElementById("priceEdit");
+const categoryEdit = document.getElementById("categoryEdit");
+const stockEdit = document.getElementById("stockEdit");
+const descriptionEdit = document.getElementById("descriptionEdit");
+let edited = {
         name: nameEdit.value,
         price: priceEdit.value,
         category: categoryEdit.value,
@@ -163,24 +152,18 @@ function saveChanges(){
         body: JSON.stringify(edited)
     }).then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         alert("Edit sucessful");
-        save.innerHTML = `Saves changes`;
         window.location.href = "admin page.html"
-    }).catch((err)=>{
-        console.log(err);
-    })
+    }).catch((err)=>{})
 }
 
 function deleteItem(id){
-    console.log(id);
     fetch(`http://localhost:1234/food/${id}`,{
         method: "DELETE"
     }).then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         window.location.href = "admin page.html"
     }).catch((err)=>{
-        console.log(err);
+
     })
 }

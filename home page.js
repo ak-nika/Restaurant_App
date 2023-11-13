@@ -36,7 +36,6 @@ function dispFood(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         div1.style.display = "none";
         if (one.style.display = "none") {
             one.style.display = "block";
@@ -64,7 +63,6 @@ function dispFood(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -78,7 +76,6 @@ function disSnacks(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         let found =  data.filter((el)=> el.category == "snack");
         if (two.style.display = "none") {
             one.style.display = "none";
@@ -107,7 +104,6 @@ function disSnacks(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -119,7 +115,6 @@ function disSwallow(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         let found =  data.filter((el)=> el.category == "swallow")
         div1.style.display = "none";
         if (three.style.display = "none") {
@@ -148,7 +143,6 @@ function disSwallow(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -160,7 +154,6 @@ function disDrinks(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         let found =  data.filter((el)=> el.category == "drink")
         div1.style.display = "none";
         if (four.style.display = "none") {
@@ -189,7 +182,6 @@ function disDrinks(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -201,7 +193,6 @@ function disFood(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         let found =  data.filter((el)=> el.category == "food")
         div1.style.display = "none";
         if (five.style.display = "none") {
@@ -230,7 +221,6 @@ function disFood(){
             `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -242,7 +232,6 @@ function disSoups(){
     `;
     fetch("http://localhost:1234/food").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         let found =  data.filter((el)=> el.category == "soup")
         div1.style.display = "none";
         if (six.style.display = "none") {
@@ -271,7 +260,6 @@ function disSoups(){
        <div>     `;
         }
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
@@ -295,16 +283,18 @@ function orderItem(id){
             body: JSON.stringify(cartObj)
         }).then(res=>res.json())
         .then((data)=>{
-            console.log(data);
             alert("Order Placed");
         }).catch((err)=>{
-            console.log(err);
         })
     }).catch((err)=>{
-        console.log(err);
     })
 }
 
 function checkOut(){
     window.location.href = "check out.html";
+}
+
+function logOut(){
+    localStorage.removeItem("curruser");
+    window.location.href = "user log in.html";
 }

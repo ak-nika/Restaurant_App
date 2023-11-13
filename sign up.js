@@ -59,11 +59,9 @@
         body: JSON.stringify(userObj)
         }).then(res=>res.json())
         .then((data)=>{
-            console.log(data);
             alert("Sign up succesful");
             window.location.href = "user log in.html";
         }).catch((err)=>{
-            console.log(err);
         })
     }
     }

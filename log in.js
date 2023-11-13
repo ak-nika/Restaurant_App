@@ -4,7 +4,6 @@ function logIn() {
  
     fetch("http://localhost:1234/users").then(res=>res.json())
     .then((data)=>{
-        console.log(data);
         if (data) {
             const matchedUser = data.find((user) => {
               return user.email === enteredEmail && user.password === enteredPassword;
@@ -21,6 +20,5 @@ function logIn() {
             alert("No user data found. Please register.");
           }
     }).catch((err)=>{
-        console.log(err);
     })  
 }
