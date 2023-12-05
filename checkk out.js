@@ -9,7 +9,7 @@ function checkOut(){
         for (let index = 0; index < data.length; index++) {
             const el = data[index];
             div1.innerHTML += `
-            <p>${index+1}. ${el.name} ₦${el.price} <button onclick="deleteItem(${el.id})">Delete</button></p>
+            <p>${index+1}. ${el.name}: ₦${el.price} <button onclick="deleteItem(${el.id})">Delete</button></p>
             `;
         }
         total = data.reduce((total, item, index)=>{
