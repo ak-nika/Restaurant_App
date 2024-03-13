@@ -24,7 +24,7 @@ checkOut()
 
 function makePayment() {
     FlutterwaveCheckout({
-      public_key: "FLWPUBK_TEST-SANDBOXDEMOKEY-X",
+      public_key: "FLWPUBK_TEST-1660f6982afb36b3544994497f38fb26-X",
       tx_ref: "titanic-48981487343MDI0NzMx",
       amount: total,
       currency: "NGN",

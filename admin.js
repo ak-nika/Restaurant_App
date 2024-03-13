@@ -32,9 +32,9 @@ function pickFile(ev){
 function post(){
     let posts = {
         name: names.value,
-        price: price.value,
+        price: Number(price.value),
         category: category.value,
-        stock: stock.value,
+        stock: Number(stock.value),
         description: description.value,
         foodImg: imgURL
     }
@@ -137,9 +137,9 @@ const stockEdit = document.getElementById("stockEdit");
 const descriptionEdit = document.getElementById("descriptionEdit");
 let edited = {
         name: nameEdit.value,
-        price: priceEdit.value,
+        price: Number(priceEdit.value),
         category: categoryEdit.value,
-        stock: stockEdit.value,
+        stock: Number(stockEdit.value),
         description: descriptionEdit.value,
         foodImg: editedURL
     }
