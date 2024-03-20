@@ -162,6 +162,7 @@ function deleteItem(id){
         method: "DELETE"
     }).then(res=>res.json())
     .then((data)=>{
+        alert("Item deleted")
         window.location.href = "admin page.html"
     }).catch((err)=>{
 

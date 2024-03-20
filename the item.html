@@ -51,7 +51,6 @@
 <script>
     const div1 = document.getElementById("div1");
     let itemId = localStorage.getItem("Item");
-    console.log(itemId);
 
     function showItem(){
         fetch(`http://localhost:1234/food/${itemId}`).then(res=>res.json())

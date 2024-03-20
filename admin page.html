@@ -20,8 +20,10 @@
             <option value="food">Food</option>
         </select>
         <input id="stock" type="number" placeholder="Number of stock available">
-        <textarea id="description" name="" id="" cols="30" rows="10" placeholder="Describe the product"></textarea>
-        <input onchange="pickFile(event)" type="file">
+        <textarea id="description" name="" cols="30" rows="10" placeholder="Describe the product"></textarea>
+        <div id="inputFileDiv">
+            <input onchange="pickFile(event)" id="inputFile" type="file">
+        </div>
         <img id="foodImg" alt="" width="200" height="200">
         <button id="btn" onclick="post()">Post</button>
     </main>
