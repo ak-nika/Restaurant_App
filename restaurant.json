@@ -325,56 +325,5 @@
       "password": "red12345"
     }
   ],
-  "cart": [
-    {
-      "id": "2cd6",
-      "name": "Bottled Sprite",
-      "price": 220
-    },
-    {
-      "id": "3b84",
-      "name": "Egusi",
-      "price": 250
-    },
-    {
-      "id": "05ee",
-      "name": "Puff Puff",
-      "price": 250
-    },
-    {
-      "id": "ce63",
-      "name": "Bottled Fanta",
-      "price": 220
-    },
-    {
-      "id": "f325",
-      "name": "Puff Puff",
-      "price": 250
-    },
-    {
-      "id": "5a40",
-      "name": "Egusi",
-      "price": 250
-    },
-    {
-      "id": "3a03",
-      "name": "Semo",
-      "price": 290
-    },
-    {
-      "id": "86d6",
-      "name": "Bottled Fanta",
-      "price": 220
-    },
-    {
-      "id": "0db7",
-      "name": "Bottled 7up",
-      "price": 210
-    },
-    {
-      "id": "d195",
-      "name": "Amala",
-      "price": 280
-    }
-  ]
+  "cart": []
 }
