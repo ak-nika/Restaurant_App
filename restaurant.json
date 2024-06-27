@@ -325,5 +325,26 @@
       "password": "red12345"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "12de",
+      "name": "Bottled Fanta",
+      "price": 220
+    },
+    {
+      "id": "a920",
+      "name": "Canned Fanta",
+      "price": 250
+    },
+    {
+      "id": "30be",
+      "name": "Semo",
+      "price": 290
+    },
+    {
+      "id": "e60d",
+      "name": "Egusi",
+      "price": 250
+    }
+  ]
 }

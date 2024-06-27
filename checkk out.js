@@ -9,7 +9,7 @@ function checkOut(){
         for (let index = 0; index < data.length; index++) {
             const el = data[index];
             div1.innerHTML += `
-            <p>${index+1}. ${el.name}: ₦${el.price} <button onclick="deleteItem(${el.id})">Delete</button></p>
+            <p>${index+1}. ${el.name}: ₦${el.price} <button onClick="deleteItem(${el.id})">Delete</button></p>
             `;
         }
         total = data.reduce((total, item, index)=>{
@@ -49,7 +49,7 @@ function makePayment() {
 
   function deleteItem(id){
     let que = prompt("Are you sure you want to remove this item from your order list?(Y/N)");
-    if (que == "Y") {
+    if (que.toUpperCase() === "Y") {
       fetch(`http://localhost:1234/cart/${id}`,{
         method: "DELETE"
     }).then(res=>res.json())
